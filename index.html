@@ -1,11 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
-  <meta http-equiv="refresh" content="0; url=./data/the-initiative-mission-control-ru.html"/>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>The Initiative: Mission Control</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Initiative">
+  <meta name="theme-color" content="#35364d">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/images/Mission+Control+Logo+RU.png">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
+  <!-- Home Screen -->
+  <div id="home-screen" class="screen">
+    <div class="home-logo">
+      <img src="assets/images/Mission+Control+Logo+RU.png" alt="Mission Control Logo">
+    </div>
+    <p class="home-description">
+      Добро пожаловать в приложение Mission Control. Здесь собраны все интерактивные задания для настольной игры
+      «Инициатива».
+    </p>
+
+    <div class="section-title">Задания</div>
+    <div id="main-sets" class="set-grid">
+      <!-- Rendered by JS -->
+    </div>
+
+    <div class="section-title">Бонусные задания</div>
+    <div id="bonus-sets" class="set-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- Plan Screen -->
+  <div id="plan-screen" class="screen hidden">
+    <div class="task-header">
+      <button id="plan-back-btn" class="header-btn" aria-label="Назад">←</button>
+      <div class="header-center">
+        <span id="plan-set-name" class="header-set-name">Набор</span>
+        <select id="plan-mission-select" class="header-select"></select>
+      </div>
+      <button id="plan-toggle-btn" class="header-btn" aria-label="Перейти к форме">🔄</button>
+    </div>
+    <div id="plan-content" class="plan-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- Form Screen -->
+  <div id="form-screen" class="screen hidden">
+    <div class="task-header">
+      <button id="form-back-btn" class="header-btn" aria-label="Назад">←</button>
+      <div class="header-center">
+        <span id="form-set-name" class="header-set-name">Набор</span>
+        <select id="form-mission-select" class="header-select"></select>
+      </div>
+      <button id="form-toggle-btn" class="header-btn" aria-label="Перейти к плану">🔄</button>
+    </div>
+    <div id="form-content" class="form-content">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+
+  <!-- Flip Indicator -->
+  <div id="flip-indicator" class="flip-indicator">🔄 Форма</div>
+
+  <!-- Password Modal -->
+  <div id="password-modal" class="modal-overlay">
+    <div class="modal">
+      <h3>ЗАДАНИЕ ЗАБЛОКИРОВАНО</h3>
+      <p>Чтобы сыграть в последнее задание, вы должны использовать всё, что узнали о проекте «Голиаф». Введите пароль:
+      </p>
+      <input type="text" id="password-input" placeholder="ПАРОЛЬ" autocomplete="off" autocorrect="off"
+        autocapitalize="characters" spellcheck="false">
+      <div id="password-error" class="modal-error"></div>
+      <div class="modal-buttons">
+        <button id="password-cancel-btn" class="modal-btn-cancel">Отмена</button>
+        <button id="password-submit-btn" class="modal-btn-submit">Ввод</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <div class="app-version">v0.1.0</div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
