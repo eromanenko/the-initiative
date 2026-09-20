@@ -1,4 +1,4 @@
-const VERSION = '0.1.1';
+const VERSION = '0.1.2';
 const CACHE_NAME = `initiative-v${VERSION}`;
 
 // We'll cache all necessary assets for offline use
@@ -14,8 +14,8 @@ const ASSETS = [
   './assets/images/windowDown.png',
   './assets/images/windowUp.png',
   './assets/images/Mission_Control_Computer.png',
-  './assets/icon/logo-192.png',
-  './assets/icon/logo-512.png'
+  './assets/icons/logo-192.png',
+  './assets/icons/logo-512.png'
 ];
 
 self.addEventListener('install', (event) => {
